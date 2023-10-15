@@ -5,7 +5,7 @@ export const useCart = create(
   persist(
     (set, get) => ({
       cart: [],
-      addAFish: (items) => set({ cart: items }),
+      setCart: (items) => set({ cart: items }),
     }),
     {
       name: "cart", // name of the item in the storage (must be unique)
@@ -13,3 +13,8 @@ export const useCart = create(
     }
   )
 );
+
+export const useSearch = create((set) => ({
+  search: "",
+  setSearch: (string) => set(() => ({ search: string })),
+}));
